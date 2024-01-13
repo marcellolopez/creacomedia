@@ -87,18 +87,17 @@
                                     <div class="rating your-rating-box" onclick="event.preventDefault();"
                                          data-toggle="modal" data-id="{{ $enroll->course->id }}"
                                          data-target="#EditRatingModal">
-
-                                        @php
-                                            //dd($enroll->course->review());
-                                            $my_rating = $enroll->course->review()['rating'];
-                                        @endphp
-                                        @for($i = 1; $i <= 5; $i++)
-                                            @if ($i <= $my_rating)
-                                                <i class="fas fa-star filled"></i>
-                                            @else
-                                                <i class="fas fa-star"></i>
-                                            @endif
-                                        @endfor
+                                            @php
+                                                $my_rating = $enroll->course->review() == null ? 0 : $enroll->course->review()['rating'];
+                                            @endphp
+                                            @for($i = 1; $i <= 5; $i++)
+                                                @if ($i <= $my_rating)
+                                                    <i class="fas fa-star filled"></i>
+                                                @else
+                                                    <i class="fas fa-star"></i>
+                                                @endif
+                                            @endfor
+                                       
                                         <p class="your-rating-text" id="ratings"
                                            onclick="courseModal({{$enroll->course->id}})">
                                             <span class="your">Your</span>
