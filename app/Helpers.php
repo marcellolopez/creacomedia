@@ -18,8 +18,19 @@ function sumarDuraciones($duracion1, $duracion2)
 
 function obtenerSegundos($duracion)
 {
-    list($horas, $minutos, $segundos) = explode(':', $duracion);
+    // Dividir la cadena en horas, minutos y segundos
+    $components = explode(':', $duracion);
 
+    // Asegurarse de que haya al menos tres componentes
+    if (count($components) < 3) {
+        // Proporcionar valores predeterminados si no se dividió correctamente
+        $components = array_pad($components, 3, 0);
+    }
+
+    // Obtener horas, minutos y segundos
+    list($horas, $minutos, $segundos) = $components;
+
+    // Calcular los segundos totales
     return $horas * 3600 + $minutos * 60 + $segundos;
 }
 
