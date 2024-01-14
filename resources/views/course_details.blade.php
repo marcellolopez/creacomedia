@@ -276,8 +276,8 @@
                         <div class="preview-video-box">
                             <a data-toggle="modal" data-target="#CoursePreviewModal">
                                 <img src="{{ asset('images/learning.jpg') }}" alt="" class="img-fluid">
-                                <span class="preview-text">Vista previa de este curso</span>
-                                <span class="play-btn"></span>
+                                {{--<span class="preview-text">Vista previa de este curso</span>--}}
+                                {{--<span class="play-btn"></span>--}}
                             </a>
                         </div>
                         <div class="course-sidebar-text-box">
