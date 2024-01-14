@@ -76,7 +76,7 @@
                                                 </span>
                                                 <span class="">
                                                     <i class="far fa-clock"></i>
-                                                    {{ $course->getTotalDuration($course->id) }}
+                                                    {{ $course->getTotalDuration() }}
                                                 </span>
                                                 {{--<span class="">
                                                     <i class="fas fa-closed-captioning"></i>Inglés
