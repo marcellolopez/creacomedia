@@ -15,7 +15,7 @@ class Course extends Model
         return $this->hasMany(Lesson::class, 'course_id');
     }
 
-    public function getTotalDurationInHours()
+    public function getTotalDuration()
     {
         $lessons = $this->lessons;
     

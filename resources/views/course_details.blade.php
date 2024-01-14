@@ -65,7 +65,7 @@
                                     {{-- $course->lessons->count() --}} Duración
                                 </span>
                                 <span class="total-time">
-                                {{$course->getTotalDurationInHours()}}
+                                {{$course->getTotalDuration()}}
                                 </span>
                             </div>
                         </div>
