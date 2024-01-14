@@ -73,8 +73,8 @@
                             <div class="course-box">
                                 <a href="">
                                     <div class="course-image">
-                                        <img src="{{ $enroll->course->thumbnail }}" alt=""
-                                             class="img-fluid">
+                                        <img src="{{ asset('/images/' . $enroll->course->thumbnail) }}" alt=""
+                                             class="img-fluid mx-auto">
                                     </div>
                                 </a>
                                 <div class="course-details">

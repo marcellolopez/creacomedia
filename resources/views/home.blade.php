@@ -5,7 +5,8 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col">
-                    <div class="home-banner-wrap">
+                    <div class="home-banner-wrap" style="min-height: 250px">
+                    {{--
                         <h2>El mejor lugar para aprender</h2>
                         <p>Aprende de cualquier tema, elige desde la categoría</p>
                         <form class="" action=""
@@ -18,6 +19,7 @@
                                 </div>
                             </div>
                         </form>
+                    --}}
                     </div>
                 </div>
             </div>
@@ -41,7 +43,7 @@
                         <i class="fa fa-check float-left"></i>
                         <div class="text-box">
                             <h4>Instrucción de expertos</h4>
-                            <p>Encuentra el curso adecuado para ti</p>
+                            <p>Encuentra el curso adecuado para ti   </p>
                         </div>
                     </div>
                 </div>
@@ -51,7 +53,7 @@
                         <i class="fa fa-clock float-left"></i>
                         <div class="text-box">
                             <h4>Acceso de por vida</h4>
-                            <p>Aprende a tu ritmo</p>
+                            <p>Aprende a tu ritmo donde quieras      </p>
                         </div>
                     </div>
                 </div>
@@ -71,7 +73,7 @@
                                    class="has-popover">
                                     <div class="course-box">
                                         <div class="course-image">
-                                            <img src="" alt="" class="img-fluid">
+                                            <img src="{{ asset('images/'. $top_course->thumbnail) }}" alt="" class="img-fluid">
                                         </div>
                                         <div class="course-details">
                                             <h5 class="title">{{ $top_course->title }}</h5>
@@ -157,7 +159,7 @@
                                 <a href="{{ route('course_detail', $course) }}">
                                     <div class="course-box">
                                         <div class="course-image">
-                                            <img src="" alt="" class="img-fluid">
+                                            <img src="{{ asset('images/'. $course->thumbnail) }}" alt="" class="img-fluid">                                        
                                         </div>
                                         <div class="course-details">
                                             <h5 class="title">{{ $course->title }}</h5>

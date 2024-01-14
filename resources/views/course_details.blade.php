@@ -53,7 +53,13 @@
                     <div class="what-you-get-box">
                         <div class="what-you-get-title">¿Qué aprenderé?</div>
                         <ul class="what-you-get__items">
-                            <li>{{ $course->outcomes }}</li>
+                            @php
+                                ##pasar $course->outcomes a un array, separando por comas  
+                                $outcomes = explode(',', $course->outcomes);
+                            @endphp
+                            @foreach($outcomes as $outcome)
+                                <li>{{ $outcome }}
+                            @endforeach
                         </ul>
                     </div>
                     <br>
@@ -275,7 +281,7 @@
                     <div class="course-sidebar natural">
                         <div class="preview-video-box">
                             <a data-toggle="modal" data-target="#CoursePreviewModal">
-                                <img src="{{ asset('images/learning.jpg') }}" alt="" class="img-fluid">
+                                <img src="{{ asset('images/' . $course->thumbnail) }}" alt="" class="img-fluid">
                                 {{--<span class="preview-text">Vista previa de este curso</span>--}}
                                 {{--<span class="play-btn"></span>--}}
                             </a>

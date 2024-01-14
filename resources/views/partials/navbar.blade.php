@@ -7,10 +7,11 @@
                     <ul class="mobile-header-buttons">
                         <li><a class="mobile-nav-trigger" href="#mobile-primary-nav">Menú<span></span></a></li>
                         <li><a class="mobile-search-trigger" href="#mobile-search">Buscar<span></span></a></li>
+                        <li><a class="mobile-cart-trigger" href="{{ route('carts.all') }}"><i class="fas fa-shopping-cart" style="font-size: 1.4em; margin-top:0.7rem"></i></a></li>
                     </ul>
 
                     <a class="navbar-brand" href="/">
-                        <img src="{{asset('images/logo.png')}}" alt="" height="30">                        
+                        <img src="{{asset('images/logo.png')}}" class="img-fluid" alt="" height="30">                        
                     </a>
 
                     @include('partials.menu')
@@ -30,7 +31,7 @@
                         {{--La lista de deseos estará aquí--}}
                     </div>
 
-                    <div class="cart-box menu-icon-box" id="cart_items">
+                    <div class="cart-box menu-icon-box d-none d-md-block" id="cart_items">
                         @include('partials.cart')
                     </div>
 
