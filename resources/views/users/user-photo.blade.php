@@ -17,34 +17,34 @@
                             <div class="user-dashboard-menu">
                                 <ul>
                                     <li>
-                                        <a href="{{ route('user.profile') }}">Profile</a>
+                                        <a href="{{ route('user.profile') }}">Perfil</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('user.credentials') }}">Account</a>
+                                        <a href="{{ route('user.credentials') }}">Cuenta</a>
                                     </li>
                                     <li class="active">
-                                        <a href="{{ route('user.photo') }}">Photo</a>
+                                        <a href="{{ route('user.photo') }}">Foto</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="user-dashboard-content">
                             <div class="content-title-box">
-                                <div class="title">Photo</div>
-                                <div class="subtitle">Update your photo.</div>
+                                <div class="title">Foto</div>
+                                <div class="subtitle">Actualiza tu foto.</div>
                             </div>
                             <form action="{{ route('user.photo.update') }}" enctype="multipart/form-data" method="post">
                                 @csrf
                                 <div class="content-box">
                                     <div class="email-group">
                                         <div class="form-group">
-                                            <label for="user_image">Upload image:</label>
+                                            <label for="user_image">Subir imagen:</label>
                                             <input type="file" class="form-control" name="user_image" id="user_image">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="content-update-box">
-                                    <button type="submit" class="btn">Save</button>
+                                    <button type="submit" class="btn">Guardar</button>
                                 </div>
                             </form>
                         </div>

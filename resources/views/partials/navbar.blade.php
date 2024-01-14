@@ -5,13 +5,13 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
                     <ul class="mobile-header-buttons">
-                        <li><a class="mobile-nav-trigger" href="#mobile-primary-nav">Menu<span></span></a></li>
-                        <li><a class="mobile-search-trigger" href="#mobile-search">Search<span></span></a></li>
+                        <li><a class="mobile-nav-trigger" href="#mobile-primary-nav">Menú<span></span></a></li>
+                        <li><a class="mobile-search-trigger" href="#mobile-search">Buscar<span></span></a></li>
                     </ul>
 
                     <a class="navbar-brand" href="/">
                         {{--<img src="" alt="" height="30">--}}
-                        Udemy Clone
+                        Crea Comedia
                     </a>
 
                     @include('partials.menu')
@@ -20,7 +20,7 @@
                           method="post" style="width: 100%;">
                         <div class="input-group search-box mobile-search">
                             <input type="text" name='search_string' class="form-control"
-                                   placeholder="Search for courses">
+                                   placeholder="Buscar cursos">
                             <div class="input-group-append">
                                 <button class="btn" type="submit"><i class="fas fa-search"></i></button>
                             </div>
@@ -28,7 +28,7 @@
                     </form>
 
                     <div class="wishlist-box menu-icon-box" id="wishlist_items">
-                        {{--Wishlist will be here--}}
+                        {{--La lista de deseos estará aquí--}}
                     </div>
 
                     <div class="cart-box menu-icon-box" id="cart_items">
@@ -54,12 +54,12 @@
                                                 </div>
                                                 <div class="user-details">
                                                     <div class="user-name">
-                                                        <span class="hi">hi,</span>
+                                                        <span class="hi">Hola,</span>
                                                         <?php echo auth()->user()->first_name . ' ' . auth()->user()->last_name ?>
                                                     </div>
                                                     <div class="user-email">
                                                         <span class="email">{{ auth()->user()->email }}</span>
-                                                        <span class="welcome">Welcome back</span>
+                                                        <span class="welcome">Bienvenido de nuevo</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -68,22 +68,22 @@
 
                                     <li class="user-dropdown-menu-item">
                                         <a href="{{ route('user.courses') }}">
-                                            <i class="far fa-gem"></i>My Courses
+                                            <i class="far fa-gem"></i>Mis cursos
                                         </a>
                                     </li>
                                     <li class="user-dropdown-menu-item">
                                         <a href="">
-                                            <i class="far fa-heart"></i>My Wishlist
+                                            <i class="far fa-heart"></i>Mi lista de deseos
                                         </a>
                                     </li>
                                     <li class="user-dropdown-menu-item">
                                         <a href="{{ route('user.profile') }}">
-                                            <i class="fas fa-user"></i>User profile
+                                            <i class="fas fa-user"></i>Perfil de usuario
                                         </a>
                                     </li>
                                     <li class="dropdown-user-logout user-dropdown-menu-item">
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Logout</a>
+                                                     document.getElementById('logout-form').submit();">Cerrar sesión</a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                               style="display: none;">
@@ -100,11 +100,11 @@
                         <div class="sign-in-box btn-group">
 
                             <button type="button" class="btn btn-sign-in" data-toggle="modal"
-                                    data-target="#signInModal">Login
+                                    data-target="#signInModal">Iniciar sesión
                             </button>
 
                             <button type="button" class="btn btn-sign-up" data-toggle="modal"
-                                    data-target="#signUpModal">Sign up
+                                    data-target="#signUpModal">Registrarse
                             </button>
 
                         </div>

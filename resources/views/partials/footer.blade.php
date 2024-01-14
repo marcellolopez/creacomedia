@@ -5,15 +5,15 @@
                 <ul class="nav justify-content-md-end footer-menu">
                     <li class="nav-item">
                         <a class="nav-link"
-                           href="">About</a>
+                           href="">Acerca de</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                           href="">Privacy Policy</a>
+                           href="">Política de privacidad</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                           href="">Terms & Condition</a>
+                           href="">Términos y condiciones</a>
                     </li>
                 </ul>
             </div>
@@ -21,13 +21,12 @@
     </div>
 </footer>
 
-
 <!-- Modal -->
 <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content sign-in-modal">
             <div class="modal-header">
-                <h5 class="modal-title">Login to your account!</h5>
+                <h5 class="modal-title">¡Inicia sesión en tu cuenta!</h5>
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -37,22 +36,20 @@
                     @csrf
                     <div class="input-group">
                         <span class="input-field-icon"><i class="fas fa-envelope"></i></span>
-                        <input type="email" name="email" class="form-control" placeholder="email">
+                        <input type="email" name="email" class="form-control" placeholder="Correo electrónico">
                     </div>
                     <div class="input-group">
                         <span class="input-field-icon"><i class="fas fa-lock"></i></span>
-                        <input type="password" name="password" class="form-control" placeholder="password">
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña">
                     </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
                     <div class="forgot-pass">
-                        <span>or</span>
-                        <a href="" data-toggle="modal" data-target="#forgotModal" data-dismiss="modal">Forgot
-                            password</a>
+                        <span>o</span>
+                        <a href="" data-toggle="modal" data-target="#forgotModal" data-dismiss="modal">¿Olvidaste la contraseña?</a>
                     </div>
                 </form>
                 <div class="account-have">
-                    Don't have an account? <a href="" data-toggle="modal" data-target="#signUpModal"
-                                              data-dismiss="modal">Sign up</a>
+                    ¿No tienes una cuenta? <a href="" data-toggle="modal" data-target="#signUpModal" data-dismiss="modal">Regístrate</a>
                 </div>
             </div>
         </div>
@@ -65,10 +62,10 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content edit-rating-modal">
             <div class="modal-header">
-                <h5 class="modal-title step-1" data-step="1">Step 1</h5>
-                <h5 class="modal-title step-2" data-step="2">Step 2</h5>
+                <h5 class="modal-title step-1" data-step="1">Paso 1</h5>
+                <h5 class="modal-title step-2" data-step="2">Paso 2</h5>
                 <h5 class="m-progress-stats modal-title">
-                    &nbsp;of&nbsp;<span class="m-progress-total"></span>
+                    &nbsp;de&nbsp;<span class="m-progress-total"></span>
                 </h5>
 
                 <button type="button" class="close" data-dismiss="modal">
@@ -86,7 +83,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="modal-rating-box">
-                                    <h4 class="rating-title">How would you rate this course overall?</h4>
+                                    <h4 class="rating-title">¿Cómo calificarías este curso en general?</h4>
                                     <fieldset class="your-rating">
 
                                         <input type="radio" id="star5" name="rating" value="5"/>
@@ -126,9 +123,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="modal-rating-comment-box">
-                                    <h4 class="rating-title">Write a review</h4>
+                                    <h4 class="rating-title">Escribe una reseña</h4>
                                     <textarea id="review_of_a_course" name="review"
-                                              placeholder="Describe your experience what you got out from this course"
+                                              placeholder="Describe tu experiencia y lo que obtuviste de este curso"
                                               maxlength="1000" class="form-control"></textarea>
                                 </div>
                             </div>
@@ -149,12 +146,12 @@
                 <input type="hidden" name="course_id" id="course_id_for_rating" value="">
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary next step step-1" data-step="1"
-                            onclick="sendEvent(2)">Next
+                            onclick="sendEvent(2)">Siguiente
                     </button>
                     <button type="button" class="btn btn-primary previous step step-2 mr-auto" data-step="2"
-                            onclick="sendEvent(1)">Previous
+                            onclick="sendEvent(1)">Anterior
                     </button>
-                    <button type="submit" class="btn btn-primary publish step step-2" id="">Publish</button>
+                    <button type="submit" class="btn btn-primary publish step step-2" id="">Publicar</button>
                 </div>
             </form>
         </div>
@@ -166,7 +163,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content sign-in-modal">
             <div class="modal-header">
-                <h5 class="modal-title">Forgot Password</h5>
+                <h5 class="modal-title">¿Olvidaste tu contraseña?</h5>
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -174,12 +171,12 @@
             <div class="modal-body">
                 <form action="" method="post">
                     <div class="input-group">
-                        <input type="email" name="email" class="form-control forgot-email" placeholder="E-mail">
+                        <input type="email" name="email" class="form-control forgot-email" placeholder="Correo electrónico">
                     </div>
                     <div class="forgot-pass-btn">
-                        <button type="submit" class="btn btn-primary d-inline-block">Reset Password</button>
-                        <span>or</span>
-                        <a href="" data-toggle="modal" data-target="#signInModal" data-dismiss="modal">Log In</a>
+                        <button type="submit" class="btn btn-primary d-inline-block">Restablecer contraseña</button>
+                        <span>o</span>
+                        <a href="" data-toggle="modal" data-target="#signInModal" data-dismiss="modal">Iniciar sesión</a>
                     </div>
                 </form>
                 <div class="forgot-recaptcha">
@@ -195,7 +192,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content sign-in-modal">
             <div class="modal-header">
-                <h5 class="modal-title">Sign Up And Start Learning!</h5>
+                <h5 class="modal-title">¡Regístrate y comienza a aprender!</h5>
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -206,56 +203,56 @@
                     <div class="input-group">
                         <span class="input-field-icon"><i class="fas fa-user"></i></span>
                         <input type="text" name="first_name" class="form-control"
-                               placeholder="first name">
+                               placeholder="Nombre">
                     </div>
                     <div class="input-group">
                         <span class="input-field-icon"><i class="fas fa-user"></i></span>
                         <input type="text" name="last_name" class="form-control"
-                               placeholder="last name">
+                               placeholder="Apellido">
                     </div>
                     <div class="input-group">
                         <span class="input-field-icon"><i class="fas fa-envelope"></i></span>
                         <input type="email" name="email" class="form-control"
-                               placeholder="email">
+                               placeholder="Correo electrónico">
                     </div>
                     <div class="input-group">
                         <span class="input-field-icon"><i class="fas fa-lock"></i></span>
                         <input type="password" name="password" class="form-control"
-                               placeholder="password">
+                               placeholder="Contraseña">
                     </div>
                     <div class="input-group">
                         <span class="input-field-icon"><i class="fas fa-lock"></i></span>
                         <input type="password" name="password_confirmation" class="form-control"
-                               placeholder="Confirm password">
+                               placeholder="Confirmar contraseña">
                     </div>
                     <div class="custom-control custom-checkbox deal-checkbox">
                         <input type="checkbox" class="custom-control-input" id="dealCheckbox">
                         <label class="custom-control-label" for="dealCheckbox">
-                            Check Here For Exciting Deals And Personalized Course Recommendations
+                            Marca aquí para recibir ofertas emocionantes y recomendaciones de cursos personalizadas.
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign up</button>
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
                 </form>
                 <div class="agreement-text">
-                    By Signing Up You Agree To Our
-                    <a href="">Terms of use</a> and <a
-                            href="">Privacy Policy</a>.
+                    Al registrarte, aceptas nuestros
+                    <a href="">Términos de uso</a> y <a
+                            href="">Política de privacidad</a>.
                 </div>
                 <div class="account-have">
-                    Already have an account?
-                    <a href="" data-toggle="modal" data-target="#signInModal" data-dismiss="modal">Login</a>
+                    ¿Ya tienes una cuenta?
+                    <a href="" data-toggle="modal" data-target="#signInModal" data-dismiss="modal">Iniciar sesión</a>
                 </div>
             </div>
         </div>
     </div>
 </div><!-- Modal -->
 
-{{--payment modal--}}
+{{--modal de pago--}}
 <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content payment-in-modal">
             <div class="modal-header">
-                <h5 class="modal-title">Checkout!</h5>
+                <h5 class="modal-title">¡Compra ahora!</h5>
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>

@@ -10,7 +10,7 @@
                         <h1 class="title">{{ $course->title }}</h1>
                         <p class="subtitle">{{ $course->short_description }}</p>
                         <div class="rating-row">
-                            {{--<span class="course-badge best-seller">Best seller</span>--}}
+                            {{--<span class="course-badge best-seller">Más vendido</span>--}}
                             <?php
                             for($i = 1; $i < 6; $i++):?>
                             <?php if ($i <= 5): ?>
@@ -20,21 +20,21 @@
                             <?php endif; ?>
                             <?php endfor; ?>
                             <span class="d-inline-block average-rating"><?php echo 5; ?></span>
-                            <span>(20 ratings)</span>
+                            <span>({{$palabraValoracion = $course->review() != null ? $course->review()->count() : 0}} {{$palabraValoracion = 1 ? "valoración" : "valoraciones"}})</span>
                             <span class="enrolled-num">
-                                100 students enrolled
+                                {{ $course->getUsersCountAttribute()}} estudiantes inscritos
                             </span>
                         </div>
                         <div class="created-row">
                             {{--<span class="created-by">--}}
-                            {{--Created by--}}
-                            {{--<a href="">first_name last_name</a>--}}
+                            {{--Creado por--}}
+                            {{--<a href="">nombre_apellido</a>--}}
                             {{--</span>--}}
-                            <span class="last-updated-date">Created on {{ $course->created_at }}</span>
-                            <span class="last-updated-date">Last updated on {{ $course->updated_at }}</span>
-                            <span class="comment">
-                                <i class="fas fa-comment"></i>English
-                            </span>
+                            <span class="last-updated-date">Creado el {{date_format($course->created_at, 'd/m/Y')}}</span>
+                            <span class="last-updated-date">Última actualización el {{date_format($course->updated_at, 'd/m/Y')}}</span>
+                            {{--<span class="comment">
+                                <i class="fas fa-comment"></i>Inglés
+                            </span>--}}
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                 <div class="col-lg-8">
 
                     <div class="what-you-get-box">
-                        <div class="what-you-get-title">What i will learn?</div>
+                        <div class="what-you-get-title">¿Qué aprenderé?</div>
                         <ul class="what-you-get__items">
                             <li>{{ $course->outcomes }}</li>
                         </ul>
@@ -59,13 +59,13 @@
                     <br>
                     <div class="course-curriculum-box">
                         <div class="course-curriculum-title clearfix">
-                            <div class="title float-left">Lessons for this course</div>
-                            <div class="float-right">
+                            <div class="title float-left">Lecciones de este curso</div>
+                            <div class="float-right  mt-2">
                                 <span class="total-lectures">
-                                    {{ $course->lessons->count() }} lessons
+                                    {{-- $course->lessons->count() --}} Duración
                                 </span>
                                 <span class="total-time">
-                                    2 hours
+                                {{$course->getTotalDurationInHours()}}
                                 </span>
                             </div>
                         </div>
@@ -76,14 +76,15 @@
                                      data-target="#collapse"
                                      aria-expanded="false">
                                     <div class="title float-left">
-                                        Lessons
+                                        Lecciones
                                     </div>
                                     <div class="float-right">
                                         <span class="total-lectures">
-                                            {{ $course->lessons->count() }} lessons
+                                            
                                         </span>
                                         <span class="total-time">
-                                            12: 30 minute
+                                            
+                                            {{ $course->lessons->count() }} lecciones
                                         </span>
                                     </div>
                                 </div>
@@ -94,7 +95,7 @@
                                             <li class="lecture has-preview">
                                                 <span class="lecture-title">{{ $lesson->title }}</span>
                                                 <span class="lecture-time float-right">{{ $lesson->duration }}</span>
-                                                <!-- <span class="lecture-preview float-right" data-toggle="modal" data-target="#CoursePreviewModal">Preview</span> -->
+                                                <!-- <span class="lecture-preview float-right" data-toggle="modal" data-target="#CoursePreviewModal">Vista previa</span> -->
                                             </li>
                                         @endforeach
                                     </ul>
@@ -104,7 +105,7 @@
                     </div>
 
                     <div class="requirements-box">
-                        <div class="requirements-title">Requirements</div>
+                        <div class="requirements-title">Requisitos</div>
                         <div class="requirements-content">
                             <ul class="requirements__list">
                                 <li>{{ $course->requirements }}</li>
@@ -113,64 +114,64 @@
                     </div>
                     <div class="description-box view-more-parent">
                         <div class="view-more" onclick="viewMore(this,'hide')">
-                            + View More
+                            + Ver más
                         </div>
-                        <div class="description-title">Description</div>
+                        <div class="description-title">Descripción</div>
                         <div class="description-content-wrap">
                             <div class="description-content">
-                                {{ $course->description }}
+                                {!! $course->description !!}
                             </div>
                         </div>
                     </div>
 
 
-                    <div class="compare-box view-more-parent">
-                        <div class="view-more" onclick="viewMore(this)">+ View More</div>
-                        <div class="compare-title">Other Related Courses</div>
+                    <div class="compare-box view-more-parent d-none">
+                        <div class="view-more" onclick="viewMore(this)">+ Ver más</div>
+                        <div class="compare-title">Otros cursos relacionados</div>
                         <div class="compare-courses-wrap">
 
                         </div>
                     </div>
 
-                    <div class="about-instructor-box">
+                    <div class="about-instructor-box d-none">
                         <div class="about-instructor-title">
-                            About the instructor
+                            Sobre el instructor
                         </div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="about-instructor-image">
                                     <img src="" alt="" class="img-fluid">
                                     <ul>
-                                        <!-- <li><i class="fas fa-star"></i><b>4.4</b> Average Rating</li> -->
+                                        <!-- <li><i class="fas fa-star"></i><b>4.4</b> Puntuación promedio</li> -->
                                         <li>
                                             <i class="fas fa-comment"></i><b>
                                                 100
-                                            </b> reviews
+                                            </b> opiniones
                                         </li>
                                         <li><i class="fas fa-user"></i><b>
                                                 120
-                                            </b> Students
+                                            </b> estudiantes
                                         </li>
                                         <li>
                                             <i class="fas fa-play-circle"></i>
                                             <b>
                                                 11
-                                            </b> Courses
+                                            </b> Cursos
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-8">
                                 <div class="about-instructor-details view-more-parent">
-                                    <div class="view-more" onclick="viewMore(this)">+ View More</div>
+                                    <div class="view-more" onclick="viewMore(this)">+ Ver más</div>
                                     <div class="instructor-name">
                                         <a href=""></a>
                                     </div>
                                     <div class="instructor-title">
-                                        title
+                                        título
                                     </div>
                                     <div class="instructor-bio">
-                                        biography
+                                        biografía
                                     </div>
                                 </div>
                             </div>
@@ -179,7 +180,7 @@
 
                     <div class="student-feedback-box">
                         <div class="student-feedback-title">
-                            Student feedback
+                            Comentarios de estudiantes
                         </div>
                         <div class="row">
                             <div class="col-lg-6 col-lg-offset-4">
@@ -197,7 +198,7 @@
                                         <?php endif; ?>
                                         <?php endfor; ?>
                                     </div>
-                                    <div class="title">Average rating</div>
+                                    <div class="title">Puntuación promedio</div>
                                 </div>
                             </div>
                             {{--<div class="col-lg-9">--}}
@@ -226,7 +227,7 @@
                             {{--</div>--}}
                         </div>
                         <div class="reviews">
-                            <div class="reviews-title">Reviews</div>
+                            <div class="reviews-title">Opiniones</div>
                             <ul>
                                 @foreach($course->reviews as $review)
                                     <li>
@@ -234,7 +235,7 @@
                                             <div class="col-lg-4">
                                                 <div class="reviewer-details clearfix">
                                                     <div class="reviewer-img float-left">
-                                                        <img src="" alt="">
+                                                        <img src="{{asset('/images/' . $review->user->photo) }}" alt="">
                                                     </div>
                                                     <div class="review-time">
                                                         <div class="time">
@@ -275,7 +276,7 @@
                         <div class="preview-video-box">
                             <a data-toggle="modal" data-target="#CoursePreviewModal">
                                 <img src="{{ asset('images/learning.jpg') }}" alt="" class="img-fluid">
-                                <span class="preview-text">Preview this course</span>
+                                <span class="preview-text">Vista previa de este curso</span>
                                 <span class="play-btn"></span>
                             </a>
                         </div>
@@ -287,14 +288,13 @@
                             </div>
 
                             {{--<div class="buy-btns">--}}
-                            {{--<button class="btn btn-buy-now" type="button">Already purchased</button>--}}
+                            {{--<button class="btn btn-buy-now" type="button">Ya comprado</button>--}}
                             {{--</div>--}}
                             <div class="buy-btns">
                                 @if(Cart::get($course->id))
-                                    <a href="" class="btn btn-buy-now" id="course_2" onclick="handleBuyNow(this)">Buy
-                                        now</a>
+                                    <a href="" class="btn btn-buy-now" id="course_2" onclick="handleBuyNow(this)">Comprar ahora</a>
                                     <button class="btn btn-add-cart addedToCart" type="button" id="{{ $course->id }}"
-                                            onclick="handleCartItems(this)">Added to cart
+                                            onclick="handleCartItems(this)">Añadido al carrito
                                     </button>
                                 @else
                                     <form action="{{ route('cart.add') }}" method="post">
@@ -305,27 +305,26 @@
                                         <input type="hidden" value="{{ $course->price }}" name="price">
                                         <input type="hidden" value="1" name="quantity">
 
-                                        <button class="btn btn-add-cart" type="submit" id="{{ $course->id }}">Add to
-                                            cart
+                                        <button class="btn btn-add-cart" type="submit" id="{{ $course->id }}">Añadir al carrito
                                         </button>
                                     </form>
                                 @endif
                             </div>
 
                             <div class="includes">
-                                <div class="title"><b>Includes:</b></div>
+                                <div class="title"><b>Incluye:</b></div>
                                 <ul>
-                                    <li>
+                                    <li class="d-none">
                                         <i class="far fa-file-video"></i>
-                                        on_demand_videos
+                                        Videos a pedido
                                     </li>
                                     <li>
-                                        <i class="far fa-file"></i> {{ $course->lessons->count() }} lessons
+                                        <i class="far fa-file"></i> {{ $course->lessons->count() }} lecciones
                                     </li>
-                                    <li><i class="far fa-compass"></i>Full lifetime access
+                                    <li><i class="far fa-compass"></i>Acceso de por vida
                                     </li>
                                     <li>
-                                        <i class="fas fa-mobile-alt"></i>Access on mobile and tv
+                                        <i class="fas fa-mobile-alt"></i>Acceso en dispositivos móviles y TV
                                     </li>
                                 </ul>
                             </div>

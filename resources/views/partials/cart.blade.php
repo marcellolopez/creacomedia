@@ -17,7 +17,7 @@
                             <div class="item-details">
                                 <a href="{{ route('course_detail', $cart->id) }}">
                                     <div class="course-name">{{ $cart->name }}</div>
-                                    {{--<div class="instructor-name">first_name last_name</div>--}}
+                                    {{--<div class="instructor-name">Nombre del instructor</div>--}}
                                     <div class="item-price">
                                         <span class="current-price">${{ $cart->price }}</span>
                                         {{--<span class="original-price">$300</span>--}}
@@ -36,11 +36,11 @@
                     <span class="current-price">${{ Cart::getTotal() }}</span>
                 </div>
             </div>
-            <a href="{{ route('carts.all') }}">Go to cart</a>
+            <a href="{{ route('carts.all') }}">Ir al carrito</a>
         </div>
     </div>
     <div class="empty-box text-center d-none">
-        <p>Your cart is empty.</p>
-        <a href="">Keep Shopping</a>
+        <p>Tu carrito está vacío.</p>
+        <a href="">Continuar comprando</a>
     </div>
 </div>

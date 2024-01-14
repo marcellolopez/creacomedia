@@ -17,21 +17,21 @@
                             <div class="user-dashboard-menu">
                                 <ul>
                                     <li class="active">
-                                        <a href="{{ route('user.profile') }}">Profile</a>
+                                        <a href="{{ route('user.profile') }}">Perfil</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('user.credentials') }}">Account</a>
+                                        <a href="{{ route('user.credentials') }}">Cuenta</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('user.photo') }}">Photo</a>
+                                        <a href="{{ route('user.photo') }}">Foto</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="user-dashboard-content">
                             <div class="content-title-box">
-                                <div class="title">Profile</div>
-                                <div class="subtitle">Add information about yourself to share on your profile.
+                                <div class="title">Perfil</div>
+                                <div class="subtitle">Agrega información sobre ti para compartir en tu perfil.
                                 </div>
                             </div>
                             <form action="{{ route('user.profile.update') }}" method="post">
@@ -39,18 +39,18 @@
                                 <div class="content-box">
                                     <div class="basic-group">
                                         <div class="form-group">
-                                            <label for="FristName">Basics:</label>
+                                            <label for="FristName">Datos básicos:</label>
                                             <input type="text" class="form-control" name="first_name" id="FristName"
-                                                   placeholder="first name" value="{{ auth()->user()->first_name }}">
+                                                   placeholder="nombre" value="{{ auth()->user()->first_name }}">
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="last_name"
-                                                   placeholder="last name" value="{{ auth()->user()->last_name }}">
+                                                   placeholder="apellido" value="{{ auth()->user()->last_name }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="content-update-box">
-                                    <button type="submit" class="btn">Save</button>
+                                    <button type="submit" class="btn">Guardar</button>
                                 </div>
                             </form>
                         </div>

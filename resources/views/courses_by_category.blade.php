@@ -33,11 +33,11 @@
             <div class="row">
                 <div class="col">
                     <div class="category-filter-box filter-box clearfix">
-                        <a href="" class="btn btn-outline-secondary all-btn">All</a>
+                        <a href="" class="btn btn-outline-secondary all-btn">Todos</a>
 
                         <div class="btn-group category-list">
                             <a class="btn btn-outline-secondary dropdown-toggle" href="#" data-toggle="dropdown">
-                                Category List
+                                Lista de Categorías
                             </a>
                             <div class="dropdown-menu">
                                 @foreach(\App\Category::all() as $category)
@@ -62,7 +62,7 @@
                                         <div class="course-details">
                                             <a href="{{ route('course_detail', $course) }}" class="course-title">{{ $course->title }}</a>
                                             {{--<a href="" class="course-instructor">--}}
-                                                {{--<span class="instructor-name">first_name last_name</span>--}}
+                                                {{--<span class="instructor-name">nombre_apellido</span>--}}
                                                 {{-----}}
                                             {{--</a>--}}
                                             <div class="course-subtitle">
@@ -71,15 +71,16 @@
                                             <div class="course-meta">
                                                 <span class="">
                                                     <i class="fas fa-play-circle"></i>
-                                                    {{ $course->lessons->count() }} Lessons
+                                                    {{ $course->lessons->count() }} 
+                                                    {{ $course->lessons->count() > 1 ? "Lecciones" : "Lección"}}
                                                 </span>
                                                 <span class="">
                                                     <i class="far fa-clock"></i>
-                                                    3 hours
+                                                    {{ $course->getTotalDuration($course->id) }}
                                                 </span>
-                                                <span class="">
-                                                    <i class="fas fa-closed-captioning"></i>English
-                                                </span>
+                                                {{--<span class="">
+                                                    <i class="fas fa-closed-captioning"></i>Inglés
+                                                </span>--}}
                                             </div>
                                         </div>
                                         <div class="course-price-rating">
@@ -95,7 +96,7 @@
                                                 <span class="d-inline-block average-rating">5</span>
                                             </div>
                                             <div class="rating-number">
-                                                {{ $course->reviews->count() }} Ratings
+                                                {{ $course->reviews->count() }} Valoraciones
                                             </div>
                                         </div>
                                     </div>
@@ -104,7 +105,7 @@
                         </ul>
                     </div>
                     <nav>
-                        {{--pagination--}}
+                        {{--paginación--}}
                         {{ $courses->links() }}
                     </nav>
                 </div>

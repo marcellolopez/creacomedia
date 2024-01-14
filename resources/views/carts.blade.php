@@ -13,10 +13,10 @@
                                     <i class="fas fa-home"></i>
                                 </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#">Shopping Cart</a></li>
+                            <li class="breadcrumb-item"><a href="#">Carrito de compras</a></li>
                         </ol>
                     </nav>
-                    <h1 class="page-title">Shopping Cart</h1>
+                    <h1 class="page-title">Carrito de compras</h1>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                     <div class="col-lg-9">
 
                         <div class="in-cart-box">
-                            <div class="title">{{ Cart::getTotal() }} courses in cart</div>
+                            <div class="title">{{ Cart::getTotal() }} cursos en el carrito</div>
                             <div class="">
                                 <ul class="cart-course-list">
                                     @foreach ($carts as $cart)
@@ -53,10 +53,10 @@
                                                               method="post">
                                                             @csrf
                                                             <input type="hidden" value="{{ $cart->id }}">
-                                                            <input type="submit" class="btn-success" value="Remove">
+                                                            <input type="submit" class="btn-success" value="Eliminar">
                                                         </form>
                                                     </div>
-                                                    <!-- <div>Move to Wishlist</div> -->
+                                                    <!-- <div>Mover a la lista de deseos</div> -->
                                                 </div>
                                                 <div class="price">
                                                     <a href="">
@@ -83,13 +83,13 @@
                                 $<span id="total_price_of_checking_out">{{ Cart::getTotal() }}</span>
                             </div>
                             <button type="button" class="btn btn-primary btn-block checkout-btn"
-                                    onclick="handleCheckOut()">Checkout
+                                    onclick="handleCheckOut()">Pagar
                             </button>
                         </div>
                     </div>
                 </div>
             @else
-                <div class="title">Cart is empty</div>
+                <div class="title">El carrito está vacío</div>
             @endif
         </div>
     </section>

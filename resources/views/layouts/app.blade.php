@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Laravel Udemy Clone</title>
+    <title>Crea Comedia</title>
 
     @include('partials.header')
 </head>

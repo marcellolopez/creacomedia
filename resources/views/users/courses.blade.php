@@ -6,11 +6,11 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="page-title">My Courses</h1>
+                    <h1 class="page-title">Mis Cursos</h1>
                     <ul>
-                        <li class="active"><a href="">All courses</a></li>
+                        <li class="active"><a href="">Todos los cursos</a></li>
                         <li>
-                            <a href="">Wish lists</a>
+                            <a href="">Listas de deseos</a>
                         </li>
                     </ul>
                 </div>
@@ -23,11 +23,11 @@
             <div class="row align-items-baseline">
                 <div class="col-lg-6">
                     <div class="my-course-filter-bar filter-box">
-                        <span>Filter By</span>
+                        <span>Filtrar por</span>
                         <div class="btn-group">
                             <a class="btn btn-outline-secondary dropdown-toggle all-btn" href="#"
                                data-toggle="dropdown">
-                                Categories
+                                Categorías
                             </a>
 
                             <div class="dropdown-menu">
@@ -39,7 +39,7 @@
                         </div>
                         <div class="btn-group">
                             <a class="btn btn-outline-secondary dropdown-toggle" href="#" data-toggle="dropdown">
-                                Instructors
+                                Instructores
                             </a>
 
                             <div class="dropdown-menu">
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="btn-group">
-                            <a href="" class="btn reset-btn" disabled>Reset</a>
+                            <a href="" class="btn reset-btn" disabled>Restablecer</a>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                         <form action="">
                             <div class="input-group">
                                 <input type="text" class="form-control"
-                                       placeholder="search my courses"
+                                       placeholder="buscar mis cursos"
                                        onkeyup="getCoursesBySearchString(this.value)">
                                 <div class="input-group-append">
                                     <button class="btn" type="submit"><i class="fas fa-search"></i></button>
@@ -68,15 +68,13 @@
             </div>
             <div class="row no-gutters" id="my_courses_area">
                 @foreach ($enrolls as $enroll)
-
                     <div class="col-lg-3">
                         <div class="course-box-wrap">
                             <div class="course-box">
                                 <a href="">
                                     <div class="course-image">
-                                        <img src="{{ asset('images/learning.jpg') }}" alt=""
+                                        <img src="{{ $enroll->course->thumbnail }}" alt=""
                                              class="img-fluid">
-                                        <span class="play-btn"></span>
                                     </div>
                                 </a>
                                 <div class="course-details">
@@ -100,20 +98,19 @@
                                        
                                         <p class="your-rating-text" id="ratings"
                                            onclick="courseModal({{$enroll->course->id}})">
-                                            <span class="your">Your</span>
-                                            <span class="edit">Edit</span>
-                                            Rating
+                                            <span class="your">Tu</span>
+                                            <span class="edit">Editar</span>
+                                            Valoración
                                         </p>
                                     </div>
                                 </div>
                                 <div class="row" style="padding: 5px;">
                                     <div class="col-md-6">
-                                        <a href="{{ route('course_detail', $enroll->course->id) }}" class="btn">Course
-                                            Details</a>
+                                        <a href="{{ route('course_detail', $enroll->course->id) }}" class="btn btn-block">Detalles</a>
                                     </div>
                                     <div class="col-md-6">
                                         <a href="{{ route('user.courses.lessons', [$enroll->course, $enroll->course->lessons->first()->id]) }}"
-                                           class="btn">Start lesson</a>
+                                           class="btn btn-block">Iniciar</a>
                                     </div>
                                 </div>
                             </div>

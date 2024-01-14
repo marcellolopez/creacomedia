@@ -7,13 +7,13 @@
         <li class="has-children">
             <a href="">
                 <i class="fas fa-th d-inline"></i>
-                <span>Categories</span>
+                <span>Categorías</span>
                 <span class="has-sub-category"><i class="fas fa-angle-right"></i></span>
             </a>
 
             <ul class="category corner-triangle top-left is-hidden">
                 <li class="go-back">
-                    <a href=""><i class="fas fa-angle-left"></i>Menu</a>
+                    <a href=""><i class="fas fa-angle-left"></i>Menú</a>
                 </li>
 
                 {{--<li class="has-children">--}}
