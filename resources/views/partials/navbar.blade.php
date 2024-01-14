@@ -10,8 +10,7 @@
                     </ul>
 
                     <a class="navbar-brand" href="/">
-                        {{--<img src="" alt="" height="30">--}}
-                        Crea Comedia
+                        <img src="{{asset('images/logo.png')}}" alt="" height="30">                        
                     </a>
 
                     @include('partials.menu')
