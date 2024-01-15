@@ -79,7 +79,7 @@ class Course extends Model
 
     public function review()
     {
-        return $this->reviews()->whereUserId(auth()->user()->id)->whereCourseId($this->id)->first();
+        return $this->reviews()/*->whereUserId(auth()->user()->id)*/->whereCourseId($this->id)->first();
     }
 
     public function reviews()
