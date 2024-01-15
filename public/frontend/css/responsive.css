@@ -608,6 +608,14 @@
         text-align: left !important;
     }
 
-
+    .home-banner-area {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 110px 0 125px;
+        color: #fff;
+        background-size: 200%;
+        max-height: 157px;
+    }
 }
 
